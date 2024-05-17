@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Tajawal", sans-serif;
+    user-select: none;
+}
+
+body {
+    background: #0098fd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 750px;
+    border-radius: 20px;
+    background: #eeeeee;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+}
+
+
+.main>.question {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.main>.answer {
+    padding: 10px;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    width: 70%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-family: "Cambria Math";
+}
+
+#submit {
+    outline: none;
+    border: none;
+    background: #0098fd;
+    color: white;
+    width: 30%;
+    border-radius: 8px;
+}
+
+#submit:hover {
+    cursor: pointer;
+    background: #0082d9;
+    transition: .25s all;
+}
+
+.main>.top-buttons,
+.main>.bottom-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.main>.top-buttons>button,
+.main>.bottom-buttons>button {
+    width: 48%;
+    margin: 5px;
+    padding: 10px;
+    font-family: "Cambria Math";
+    font-size: 1.5rem;
+    background-color: #949494;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
+    flex-direction: row;
+}
+
+.right {
+    margin-right: 5px;
+}
+
+.left {
+    margin-left: 5px;
+}
+
+
+.bottom .timer {
+    color: #004085;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
+    height: 45px;
+    padding: 0 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 145px;
+}
+
+.bottom .timer .time_left_txt {
+    font-weight: 400;
+    font-size: 17px;
+    user-select: none;
+}
+
+.bottom .timer .timer_sec {
+    font-size: 18px;
+    font-weight: 500;
+    height: 30px;
+    width: 45px;
+    color: #fff;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+    background: #343a40;
+    border: 1px solid #343a40;
+    user-select: none;
+}
+
+.main>.top-buttons>button:hover,
+.main>.bottom-buttons>button:hover {
+    background: #a3a3a3;
+}
+
+@media screen and (max-width: 800px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .main>.top-buttons>button,
+    .main>.bottom-buttons>button {
+        width: 95%;
+    }
+}
