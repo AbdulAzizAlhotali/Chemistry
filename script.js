@@ -66,7 +66,7 @@ const subscriptDigits = {
 
 function getRandomElements() {
     const element1 = positiveElements[Math.floor(Math.random() * positiveElements.length)];
-    const element2 = negativeElements[Math.floor(Math.random() * negativeElements.length)];
+    const element2 = polyatomicIons[Math.floor(Math.random() * polyatomicIons.length)];
     return { element1, element2 };
 }
 
