@@ -53,7 +53,8 @@ const elements = [
 // ];
 
 function isPolyatomic(symbol) {
-    return polyatomicIons.some(ion => ion.symbol === symbol);
+    // return polyatomicIons.some(ion => ion.symbol === symbol);
+    return false;
 }
 
 const positiveElements = elements.filter(element => element.oxidation_state > 0);
@@ -118,20 +119,21 @@ let currentQuestion;
 let lastTexts = [];
 
 function startTimer() {
+    const { element1, element2 } = currentQuestion
     timer = setInterval(() => {
         timeLeft--;
         document.getElementsByClassName('timer_sec')[1].textContent = `${timeLeft}`;
         if (timeLeft <= 0) {
             clearInterval(timer);
-            showResult(false);
+            showResult(false, getFormula(element1, element2));
         }
     }, 1000);
 }
 
-function showResult(isCorrect) {
+function showResult(isCorrect, correctFormula) {
     swal({
         title: isCorrect ? "إجابة صحيحة" : "إجابة خاطئة",
-        text: isCorrect ? "تم زيادة نقطة في رصيدك" : "تم خصم نقطة من رصيدك",
+        text: isCorrect ? "تم زيادة نقطة في رصيدك" : `تم خصم نقطة من رصيدك، الإجابة الصحيحة هي ${correctFormula}`,
         icon: isCorrect ? "success" : "error",
     }).then((value) => {
         resetQuiz();
@@ -194,7 +196,7 @@ btns.forEach(btn => {
                 lastTexts.push(textContent)
             }
         } else if (event.target.id == "submit") {
-            showResult(input.value == getFormula(element1, element2))
+            showResult(input.value == getFormula(element1, element2), getFormula(element1, element2))
         } else {
             if (lastTexts.length == 0) return
             let lastText = lastTexts[lastTexts.length - 1]
