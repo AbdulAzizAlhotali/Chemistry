@@ -31,26 +31,26 @@ const elements = [
     { name: 'فضة', symbol: 'Ag', oxidation_state: 1 },
     { name: 'خارصين', symbol: 'Zn', oxidation_state: 2 },
 
-    { name: 'أمونيوم', symbol: 'NH₄', oxidation_state: 1 },
-    { name: 'نتريت', symbol: 'NO₂', oxidation_state: -1 },
-    { name: 'نترات', symbol: 'NO₃', oxidation_state: -1 },
-    { name: 'هيدروكسيد', symbol: 'OH', oxidation_state: -1 },
-    { name: 'بيكربونات', symbol: 'HCO₃', oxidation_state: -1 },
-    { name: 'كربونات', symbol: 'CO₃', oxidation_state: -2 },
-    { name: 'كبريتيت', symbol: 'SO₃', oxidation_state: -2 },
-    { name: 'كبريتات', symbol: 'SO₄', oxidation_state: -2 },
+    // { name: 'أمونيوم', symbol: 'NH₄', oxidation_state: 1 },
+    // { name: 'نتريت', symbol: 'NO₂', oxidation_state: -1 },
+    // { name: 'نترات', symbol: 'NO₃', oxidation_state: -1 },
+    // { name: 'هيدروكسيد', symbol: 'OH', oxidation_state: -1 },
+    // { name: 'بيكربونات', symbol: 'HCO₃', oxidation_state: -1 },
+    // { name: 'كربونات', symbol: 'CO₃', oxidation_state: -2 },
+    // { name: 'كبريتيت', symbol: 'SO₃', oxidation_state: -2 },
+    // { name: 'كبريتات', symbol: 'SO₄', oxidation_state: -2 },
 ];
 
-const polyatomicIons = [
-    { name: 'أمونيوم', symbol: 'NH₄', oxidation_state: 1 },
-    { name: 'نتريت', symbol: 'NO₂', oxidation_state: -1 },
-    { name: 'نترات', symbol: 'NO₃', oxidation_state: -1 },
-    { name: 'هيدروكسيد', symbol: 'OH', oxidation_state: -1 },
-    { name: 'بيكربونات', symbol: 'HCO₃', oxidation_state: -1 },
-    { name: 'كربونات', symbol: 'CO₃', oxidation_state: -2 },
-    { name: 'كبريتيت', symbol: 'SO₃', oxidation_state: -2 },
-    { name: 'كبريتات', symbol: 'SO₄', oxidation_state: -2 }
-];
+// const polyatomicIons = [
+//     { name: 'أمونيوم', symbol: 'NH₄', oxidation_state: 1 },
+//     { name: 'نتريت', symbol: 'NO₂', oxidation_state: -1 },
+//     { name: 'نترات', symbol: 'NO₃', oxidation_state: -1 },
+//     { name: 'هيدروكسيد', symbol: 'OH', oxidation_state: -1 },
+//     { name: 'بيكربونات', symbol: 'HCO₃', oxidation_state: -1 },
+//     { name: 'كربونات', symbol: 'CO₃', oxidation_state: -2 },
+//     { name: 'كبريتيت', symbol: 'SO₃', oxidation_state: -2 },
+//     { name: 'كبريتات', symbol: 'SO₄', oxidation_state: -2 }
+// ];
 
 function isPolyatomic(symbol) {
     return polyatomicIons.some(ion => ion.symbol === symbol);
@@ -66,7 +66,7 @@ const subscriptDigits = {
 
 function getRandomElements() {
     const element1 = positiveElements[Math.floor(Math.random() * positiveElements.length)];
-    const element2 = polyatomicIons[Math.floor(Math.random() * polyatomicIons.length)];
+    const element2 = negativeElements[Math.floor(Math.random() * negativeElements.length)];
     return { element1, element2 };
 }
 
